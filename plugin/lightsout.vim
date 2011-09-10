@@ -40,7 +40,7 @@ function! s:LightsOut()
 	silent %d _
 
 	" make postion list & board clear
-	if s:poslitst == []
+	if s:poslist == []
 		let i = 0
 		while i < 5
 			let j = 0
