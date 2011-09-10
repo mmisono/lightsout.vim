@@ -40,17 +40,19 @@ function! s:LightsOut()
 	silent %d _
 
 	" make postion list & board clear
-	let i = 0
-	while i < 5
-		let j = 0
-		call add(s:poslist,[])
-		while j < 5
-			call add(s:poslist[i],[0,1+i*3,1+j*6,0])
-			let s:board[i][j] = 0
-			let j += 1
+	if s:poslitst == []
+		let i = 0
+		while i < 5
+			let j = 0
+			call add(s:poslist,[])
+			while j < 5
+				call add(s:poslist[i],[0,1+i*3,1+j*6,0])
+				let s:board[i][j] = 0
+				let j += 1
+			endwhile
+			let i += 1
 		endwhile
-		let i += 1
-	endwhile
+	endif
 
 
 	" shuffle
