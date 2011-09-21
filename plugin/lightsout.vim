@@ -25,13 +25,13 @@ let s:board = [[0,0,0,0,0],
 
 function! s:LightsOut()
 
-	let winnum = bufwinnr(bufnr('\*LightsOut\*'))
+	let winnum = bufwinnr(bufnr('==LightsOut=='))
 	if winnum != -1
 		if winnum != bufwinnr('%')
 			exe "normal \<c-w>".winnum."w"
 		endif
 	else
-		exec 'silent split \*LightsOut\*'
+		exec 'silent split ==LightsOut=='
 	endif
 
 	setl nonumber
